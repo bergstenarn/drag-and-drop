@@ -166,12 +166,11 @@ function drag(e) {
 }
 
 // Column allows for item to drop
-function allowDrop(e) {
+function allowDrop(e, column) {
   e.preventDefault();
-}
-
-// When item enters column area
-function dragEnter(column) {
+  listColumns.forEach((column) => {
+    column.classList.remove("over");
+  });
   listColumns[column].classList.add("over");
   currentColumn = column;
 }
